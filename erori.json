@@ -1,0 +1,33 @@
+{
+    "cale_baza": "/resurse/imagini/erori",
+    "erori": [
+        {
+            "identificator": 404,
+            "status": true,
+            "titlu": "Pagina Nu a Fost Găsită",
+            "text": "Ne pare rău, dar pagina pe care ați încercat să o accesați nu există pe acest server. Vă rugăm să verificați URL-ul.",
+            "imagine": "404.png"
+        },
+        {
+            "identificator": 403,
+            "status": true,
+            "titlu": "Acces Interzis",
+            "text": "Nu aveți permisiunea de a accesa această resursă sau director.",
+            "imagine": "403.png"
+        },
+        {
+            "identificator": 400,
+            "status": true,
+            "titlu": "Cerere Neconformă",
+            "text": "Cererea dumneavoastră nu poate fi procesată. Accesul la acest tip de fișier nu este permis.",
+            "imagine": "400.png"
+        },
+        {
+            "identificator": 500,
+            "status": false,
+            "titlu": "Eroare Internă de Server",
+            "text": "Serverul a întâmpinat o problemă și nu poate îndeplini cererea.",
+            "imagine": "500.png"
+        }
+    ]
+}

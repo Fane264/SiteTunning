@@ -1,0 +1,45 @@
+<footer id="contact">
+    <address>
+      <p>Telefon: <a href="tel:+40072345678">+4072345678</a></p>
+      <p>Adresă: 
+        <a href="https://www.google.com/maps?q=Facultatea+de+Matematica+si+Informatica" target="_blank">
+          Facultatea de Matematică și Informatică
+        </a>
+      </p>
+      <p>E-mail: <a href="mailto:contact@codetunning.ro">contact@codetunning.ro</a></p>
+      <p>Chat:
+        <a href="https://wa.me/40723456789" target="_blank">WhatsApp</a>
+      </p>
+    </address>
+    <p>
+      <a href="/#top">Înapoi la începutul paginii</a>
+    </p>
+    <small>
+      © 2025 CodeTunning. Pagină creată la <time datetime="2025-03-10">10 martie 2025</time>.
+    </small>
+    <p class="print-banner">Acesta este un proiect școlar!</p>
+  </footer>
+
+  <a href="/#top" class="link-top" id="linkTop" data-tooltip="Mergi în sus">
+    <div class="arrow-container">
+      <span class="arrow">🠹</span>
+    </div>
+  </a>
+
+  <script>
+    window.addEventListener('scroll',function(){
+      const linkTop=document.getElementById('linkTop');
+      if(window.scrollY>300){linkTop.style.display='block';}
+      else{linkTop.style.display='none';}
+    });
+
+    const hamburgerButton = document.getElementById('hamburger-button');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburgerButton.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      hamburgerButton.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
