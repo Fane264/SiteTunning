@@ -18,7 +18,9 @@
   "homepage": "https://github.com/Fane264/SiteTunning#readme",
   "description": "",
   "dependencies": {
+    "bootstrap": "^5.3.6",
     "ejs": "^3.1.10",
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "sass": "^1.89.1"
   }
 }

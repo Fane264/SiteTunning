@@ -1,0 +1,239 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  --col-primar: #D32F2F;
+  --col-secundar: #011AFA;
+  --col-fundal: #212121;
+  --col-accent: #9E9E9E;
+  --col-text-inchis: #FAFAFA;
+  --sp-large: 5%;
+  --sp-medium: 3%;
+  --sp-small: 2%;
+  background-color: var(--col-fundal);
+  color: var(--col-text-inchis);
+  font-family: sans-serif;
+  line-height: 1.4;
+}
+
+.print-only-header, .print-watermark, .print-banner {
+  display: none;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+main.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1em;
+  padding: 1em var(--sp-large);
+  grid-template-areas: "zona1 zona1 zona1" "hr-custom hr-custom hr-custom" "zona3 zona2 zona4" "duotone duotone duotone" "zona5 zona6 zona7" "zona8 zona8 zona8" "tabel tabel tabel";
+}
+
+hr.hr-custom {
+  grid-area: hr-custom;
+}
+
+.zona1 {
+  grid-area: zona1;
+}
+
+.zona2 {
+  grid-area: zona2;
+}
+
+.zona3 {
+  grid-area: zona3;
+}
+
+.zona4 {
+  grid-area: zona4;
+}
+
+#sectiune_duotone {
+  grid-area: duotone;
+}
+
+.zona5 {
+  grid-area: zona5;
+}
+
+.zona6 {
+  grid-area: zona6;
+}
+
+.zona7 {
+  grid-area: zona7;
+}
+
+.zona8 {
+  grid-area: zona8;
+}
+
+#sectiuneTabel {
+  grid-area: tabel;
+}
+
+.zona1, .zona2, .zona3, .zona4,
+.zona5, .zona6, .zona7, .zona8, #sectiuneTabel, #sectiune_duotone {
+  background-color: #fff;
+  color: #000;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  padding: 1em;
+  margin-bottom: 1em;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+table {
+  color: #000;
+}
+
+/* ============================================== */
+/* === NOILE EFECTE CSS === */
+/* ============================================== */
+/* Efect Text Selectat */
+::selection {
+  background-color: var(--col-primar);
+  color: #fff;
+}
+
+::-moz-selection { /* Pentru Firefox */
+  background-color: var(--col-primar);
+  color: #fff;
+}
+
+/* Stilizare HR Custom */
+.hr-custom {
+  border: 0;
+  height: 3px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), var(--col-primar), rgba(0, 0, 0, 0));
+  position: relative;
+  margin: 2rem 0;
+}
+
+.hr-custom::before, .hr-custom::after {
+  content: "✵";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  color: var(--col-primar);
+}
+
+.hr-custom::before {
+  left: 0;
+}
+
+.hr-custom::after {
+  right: 0;
+}
+
+/* Efect Duotone */
+.duotone-container {
+  position: relative;
+  min-height: 40vh;
+  background-image: url("/resurse/imagini/masina_large.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  transition: filter 0.8s ease-in-out;
+}
+
+.duotone-container .content {
+  z-index: 2; /* Continutul sa fie deasupra efectului */
+  text-shadow: 2px 2px 4px #000;
+}
+
+.duotone-container::before, .duotone-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.duotone-container::before {
+  background-color: var(--col-primar);
+  mix-blend-mode: multiply;
+}
+
+.duotone-container::after {
+  background-color: var(--col-secundar);
+  mix-blend-mode: lighten;
+}
+
+.duotone-container:hover {
+  filter: grayscale(100%);
+}
+
+/* Background Fix Animat */
+@keyframes schimba-bg {
+  0% {
+    background-image: url("/resurse/imagini/galerie/masina-1.jpg");
+  }
+  50% {
+    background-image: url("/resurse/imagini/galerie/masina-2.jpg");
+  }
+  100% {
+    background-image: url("/resurse/imagini/galerie/masina-1.jpg");
+  }
+}
+.bg-fix-animat {
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  min-height: 60vh;
+  animation: schimba-bg 15s infinite linear;
+  padding: 0 !important;
+}
+
+/* Efect Reflexie Text */
+.text-reflexie {
+  position: relative;
+}
+
+.text-reflexie::after {
+  content: attr(data-text);
+  position: absolute;
+  bottom: -110%; /* Pozitionare sub textul original */
+  left: 0;
+  width: 100%;
+  transform: scaleY(-1);
+  color: transparent;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), transparent 70%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  filter: blur(1px);
+  transition: all 1.1s ease;
+}
+
+.text-reflexie:hover::after {
+  filter: blur(3px);
+  bottom: -125%;
+}
+
+/* Stiluri Galerie (codul de dinainte, inclus aici pentru completitudine) */
+.galerie-container { /* ... stilurile existente ... */ }
+
+.grid-galerie { /* ... stilurile existente ... */ }

@@ -1,0 +1,50 @@
+<%- include('fragmente/header') %>
+
+<main>
+    <div class="galerie-container">
+        <h1 class="text-reflexie" data-text="Galerie Statică">Galerie Statică</h1>
+        
+        <p>Imagini filtrate pentru luna curentă. Plimbați mouse-ul peste o imagine pentru detalii.</p>
+        
+        <div class="grid-galerie">
+            <% imagini.forEach((img, index) => { %>
+                <figure>
+                    <img src="<%= cale %>/<%= img.cale_fisier %>" alt="<%= img.alt %>" title="<%= img.titlu %>">
+                    <figcaption>
+                        <b><%= index + 1 %>.</b> <%= img.text_descriere %>
+                        <% if (img.sursa) { %>
+                            <small class="sursa-imagine">Sursa: <a href="<%= img.sursa %>" target="_blank"><%= new URL(img.sursa).hostname %></a></small>
+                        <% } %>
+                    </figcaption>
+                </figure>
+            <% }) %>
+        </div>
+    </div>
+</main>
+
+<%- include('fragmente/footer') %>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const figuri = document.querySelectorAll('.grid-galerie figure');
+
+    figuri.forEach(fig => {
+        const img = fig.querySelector('img');
+        const figcaption = fig.querySelector('figcaption');
+        
+        const titluInitial = img.title;
+        const descriereInitiala = figcaption.innerHTML;
+
+        fig.addEventListener('mouseenter', () => {
+            const descriereText = figcaption.innerText.split('.')[1]?.trim() || figcaption.innerText;
+            img.title = descriereText;
+            figcaption.innerHTML = `<b>${titluInitial}</b>`;
+        });
+
+        fig.addEventListener('mouseleave', () => {
+            img.title = titluInitial;
+            figcaption.innerHTML = descriereInitiala;
+        });
+    });
+});
+</script>

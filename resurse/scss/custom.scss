@@ -1,0 +1,40 @@
+// (0.2) Customizare Bootstrap
+
+// 1. Suprascriem variabilele Bootstrap
+// Important: Acestea trebuie definite INAINTE de a importa Bootstrap
+$primary: #D32F2F;      // Culoarea ta primara (rosu)
+$secondary: #6c757d;    // O culoare secundara standard
+$success: #198754;
+$info: #0dcaf0;
+$warning: #ffc107;
+$danger: #dc3545;
+$light: #f8f9fa;
+$dark: #212529;
+
+$body-bg: #212121;      // Culoarea ta de fundal
+$body-color: #FAFAFA;    // Culoarea ta de text
+
+$font-family-sans-serif: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$headings-font-weight: 700;
+$border-radius: 0.1rem;      // Margini mai ascutite
+$btn-padding-y: 0.5rem;
+$btn-padding-x: 1rem;
+
+// 2. Importam Bootstrap
+// Calea este relativa la acest fisier, urcand 2 nivele pana la `resurse`, apoi in `node_modules`
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+// 3. Adaugam stiluri custom suplimentare (optional)
+// Acestea se vor aplica PESTE stilurile Bootstrap
+.btn-custom-contact {
+    @extend .btn; // Mosteneste stilurile de baza ale unui buton
+    @extend .btn-outline-info; // Mosteneste stilul outline-info
+
+    // Suprascriem ce dorim
+    border-width: 2px;
+    font-weight: bold;
+    
+    &:hover {
+        color: $dark;
+    }
+}

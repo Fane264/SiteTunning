@@ -1,0 +1,28 @@
+<%- include('fragmente/header') %>
+
+<main>
+    <div class="galerie-animata-container">
+        <h1>Galerie Animată</h1>
+        <p>O selecție aleatorie de imagini din colecția noastră, prezentate într-un format dinamic. Plimbați mouse-ul peste galerie pentru a pune pauză animației.</p>
+
+        <div class="galerie-animata" style="--n_img: <%= imagini.length %>">
+            
+            <% imagini.forEach((img, index) => { %>
+                <div class="slide" 
+                     style="background-image: url('<%= cale_galerie %>/<%= img.cale_fisier %>'); 
+                            animation-delay: <%= index * 5 %>s;">
+                </div>
+            <% }) %>
+            
+            <% if (imagini.length > 0) { %>
+                <div class="slide" 
+                     style="background-image: url('<%= cale_galerie %>/<%= imagini[0].cale_fisier %>');
+                            animation-delay: <%= imagini.length * 5 %>s;">
+                </div>
+            <% } %>
+
+        </div>
+    </div>
+</main>
+
+<%- include('fragmente/footer') %>

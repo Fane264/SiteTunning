@@ -1,0 +1,41 @@
+{
+    "cale_galerie": "/resurse/imagini/galerie",
+    "imagini": [
+        {
+            "cale_fisier": "masina-1.jpg",
+            "titlu": "Supercar Roșu",
+            "alt": "Un supercar roșu pe circuit",
+            "text_descriere": "Viteză și eleganță într-un singur pachet.",
+            "luni": ["ianuarie", "iunie", "decembrie"]
+        },
+        {
+            "cale_fisier": "masina-2.jpg",
+            "titlu": "Clasic American",
+            "alt": "O mașină clasică americană, restaurată",
+            "text_descriere": "Puterea motorului V8 se simte în fiecare detaliu.",
+            "luni": ["februarie", "iunie", "septembrie"]
+        },
+        {
+            "cale_fisier": "masina-3.jpg",
+            "titlu": "Bestie Off-road",
+            "alt": "Un 4x4 modificat, plin de noroi",
+            "text_descriere": "Construit pentru a cuceri orice teren.",
+            "luni": ["martie", "iunie", "octombrie"]
+        },
+        {
+            "cale_fisier": "masina-4.jpg",
+            "titlu": "JDM Legend",
+            "alt": "O mașină sport japoneză, modificată pentru drift",
+            "text_descriere": "Stilul unic al anilor '90, pregătit pentru acțiune.",
+            "luni": ["aprilie", "iunie", "noiembrie"],
+            "sursa": "https://www.pexels.com/"
+        },
+        {
+            "cale_fisier": "masina-5.jpg",
+            "titlu": "Hypercar Modern",
+            "alt": "Un hypercar cu design futurist",
+            "text_descriere": "Tehnologie de vârf și performanțe extreme.",
+            "luni": ["mai", "iunie", "decembrie"]
+        }
+    ]
+}
