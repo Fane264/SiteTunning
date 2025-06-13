@@ -1,45 +1,52 @@
-<footer id="contact">
-    <address>
-      <p>Telefon: <a href="tel:+40072345678">+4072345678</a></p>
-      <p>Adresă: 
-        <a href="https://www.google.com/maps?q=Facultatea+de+Matematica+si+Informatica" target="_blank">
-          Facultatea de Matematică și Informatică
-        </a>
-      </p>
-      <p>E-mail: <a href="mailto:contact@codetunning.ro">contact@codetunning.ro</a></p>
-      <p>Chat:
-        <a href="https://wa.me/40723456789" target="_blank">WhatsApp</a>
-      </p>
-    </address>
-    <p>
-      <a href="/#top">Înapoi la începutul paginii</a>
-    </p>
-    <small>
-      © 2025 CodeTunning. Pagină creată la <time datetime="2025-03-10">10 martie 2025</time>.
-    </small>
+<footer id="contact" class="container-fluid py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h5>Contact</h5>
+          <address>
+            <p><i class="bi bi-telephone-fill me-2"></i>Telefon: <a href="tel:+40072345678">+4072345678</a></p>
+            <p><i class="bi bi-geo-alt-fill me-2"></i>Adresă: 
+              <a href="https://www.google.com/maps?q=Facultatea+de+Matematica+si+Informatica" target="_blank">
+                Facultatea de Matematică și Informatică
+              </a>
+            </p>
+            <p><i class="bi bi-envelope-fill me-2"></i>E-mail: <a href="mailto:contact@codetunning.ro">contact@codetunning.ro</a></p>
+            <p><i class="bi bi-whatsapp me-2"></i>Chat:
+              <a href="https://wa.me/40723456789" target="_blank">WhatsApp</a>
+            </p>
+          </address>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <h5>CodeTunning</h5>
+          <p class="text-body-secondary">Performanță și stil, livrate cu pasiune.</p>
+          <p>
+            <a href="#top" class="btn btn-outline-light btn-sm">Înapoi la începutul paginii</a>
+          </p>
+          <small>
+            © 2025 CodeTunning. Pagină creată la <time datetime="2025-06-09">9 iunie 2025</time>.
+          </small>
+        </div>
+      </div>
+    </div>
     <p class="print-banner">Acesta este un proiect școlar!</p>
   </footer>
 
-  <a href="/#top" class="link-top" id="linkTop" data-tooltip="Mergi în sus">
-    <div class="arrow-container">
-      <span class="arrow">🠹</span>
-    </div>
-  </a>
+  <div id="container-comparare" class="container-comparare">
+    <strong class="me-3">Compară produse:</strong>
+    <div class="produse-comparate">
+      </div>
+    <button class="btn btn-danger btn-sm btn-afiseaza-comparatie" style="display: none;">Afișează</button>
+  </div>
 
   <script>
-    window.addEventListener('scroll',function(){
-      const linkTop=document.getElementById('linkTop');
-      if(window.scrollY>300){linkTop.style.display='block';}
-      else{linkTop.style.display='none';}
-    });
-
     const hamburgerButton = document.getElementById('hamburger-button');
     const navLinks = document.getElementById('nav-links');
-
-    hamburgerButton.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-      hamburgerButton.classList.toggle('active');
-    });
+    hamburgerButton.addEventListener('click', () => { navLinks.classList.toggle('active'); hamburgerButton.classList.toggle('active'); });
   </script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/resurse/js/tema.js"></script>
+  <script src="/resurse/js/oferte.js"></script>
+  <script src="/resurse/js/comparare.js"></script>
 </body>
 </html>

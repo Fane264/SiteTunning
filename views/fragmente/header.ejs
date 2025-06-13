@@ -8,72 +8,32 @@
   <meta name="description" content="Site destinat tuning-ului auto">
   <meta name="author" content="Nastase Radu Stefan">  
   <link rel="icon" type="image/png" href="/resurse/imagini/favicon/favicon-96x96.png" sizes="96x96">
-  <link rel="icon" type="image/svg+xml" href="/resurse/imagini/favicon/favicon.svg">
-  <link rel="shortcut icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" sizes="180x180" href="/resurse/imagini/favicon/apple-touch-icon.png">
-  <link rel="manifest" href="/resurse/imagini/favicon/site.webmanifest">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   
   <link rel="stylesheet" href="/resurse/css/custom.css">
   <link rel="stylesheet" href="/resurse/css/stil.css">
-
 </head>
 <body id="top">
 
-  <div class="print-only-header">
-    <h1>CodeTunning</h1>
-    <ul>
-        <li>Motoare și Performanță</li>
-        <li>Suspensii și Frânare</li>
-        <li>Exterior și Aerodinamică</li>
-        <li>Galerie</li>
-        <li>Contact</li>
-    </ul>
-  </div>
-  <div class="print-watermark">
-    Nastase<br>Radu Stefan
-  </div>
   <header>
-    <nav class="main-nav">
-      <a href="/#top" class="nav-home">
-        <i class="fas fa-home"></i>
-        <span class="home-text">Home Page</span>
+    <nav class="main-nav navbar-expand-lg">
+      <a href="/" class="nav-home">
+        <i class="fas fa-home"></i><span class="home-text">Home Page</span>
       </a>
       <div class="nav-container">
         <ul class="nav-links" id="nav-links">
-            <li><a href="/#sectiune1">Motoare și Performanță</a>
+            <li>
+                <a href="/produse">Produse</a>
                 <ul class="submenu">
-                    <li><a href="/#subsectiune1">Piese performanță</a></li>
-                    <li><a href="/#subsectiune2">Software motor</a></li>
-                </ul>
-            </li>
-            <li><a href="/#sectiune2">Suspensii și Frânare</a>
-                <ul class="submenu">
-                    <li><a href="/#sectiune2">Arcuri sport</a></li>
-                    <li><a href="/#sectiune2">Discuri și etrieri</a></li>
-                </ul>
-            </li>
-            <li><a href="/#sectiune3">Exterior și Aerodinamică</a>
-                <ul class="submenu">
-                    <li><a href="/#sectiune3">Bodykit complet</a></li>
-                    <li><a href="/#sectiune3">Eleron</a></li>
-                </ul>
-            </li>
-            <li><a href="/#sectiune4">Roți și Jante</a>
-                <ul class="submenu">
-                    <li><a href="/#sectiune4">Jante</a></li>
-                    <li><a href="/#sectiune4">Anvelope</a></li>
-                </ul>
-            </li>
-            <li><a href="/#sectiune5">Iluminare</a>
-                <ul class="submenu">
-                    <li><a href="/#sectiune5">Becuri</a></li>
-                    <li><a href="/#sectiune5">Benzi LED</a></li>
-                </ul>
-            </li>
-            <li><a href="/#sectiune6">Interior și Confort</a>
-                <ul class="submenu">
-                    <li><a href="/#sectiune6">Accesorii</a></li>
+                    <li><a href="/produse">Toate Categoriile</a></li>
+                    <li><a href="/seturi">Seturi Produse</a></li>
+                    <hr class="dropdown-divider">
+                    <% if(locals.categorii) { %>
+                        <% categorii.forEach(function(cat){ %>
+                            <li><a href="/produse?categorie=<%= cat %>"><%= cat.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase()) %></a></li>
+                        <% }); %>
+                    <% } %>
                 </ul>
             </li>
             <li><a href="/galerie">Galerie</a></li>
@@ -81,6 +41,18 @@
             <li><a href="/#contact">Contact</a></li>
         </ul>
       </div>
+
+      <div class="dropdown ms-auto">
+          <button class="btn btn-outline-light dropdown-toggle d-flex align-items-center" type="button" id="bd-theme" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Toggle theme">
+              <span class="theme-icon-active"><i class="fas fa-adjust"></i></span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-theme">
+              <li><button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light"><i class="fas fa-sun me-2"></i>Light</button></li>
+              <li><button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark"><i class="fas fa-moon me-2"></i>Dark</button></li>
+              <li><button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="sepia"><i class="fas fa-palette me-2"></i>Sepia</button></li>
+          </ul>
+      </div>
+
       <button class="hamburger" id="hamburger-button" aria-label="Meniu principal">
         <div class="bar"></div>
       </button>

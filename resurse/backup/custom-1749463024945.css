@@ -11922,24 +11922,3 @@ textarea.form-control-lg {
 [data-bs-theme=sepia] .btn-check:checked + .btn, [data-bs-theme=sepia] .btn-check:checked + .btn-custom-contact {
   color: #fff;
 }
-[data-bs-theme=sepia] footer {
-  color: var(--bs-body-color);
-}
-[data-bs-theme=sepia] footer a {
-  color: rgb(var(--bs-link-color-rgb));
-}
-[data-bs-theme=sepia] footer a:hover {
-  color: rgb(var(--bs-link-hover-color-rgb));
-}
-[data-bs-theme=sepia] .text-body-secondary {
-  color: #6c5f4f !important;
-}
-[data-bs-theme=sepia] .btn-outline-light {
-  --bs-btn-color: #4a4032;
-  --bs-btn-border-color: #8c5a32;
-  --bs-btn-hover-bg: #8c5a32;
-  --bs-btn-hover-color: #fff;
-  --bs-btn-active-bg: #6a421a;
-  --bs-btn-active-border-color: #6a421a;
-  --bs-btn-active-color: #fff;
-}

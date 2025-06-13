@@ -1,0 +1,132 @@
+<%- include('fragmente/header') %>
+
+<main class="container mt-5 pt-4">
+    <h1 class="text-center mb-2">Produsele Noastre</h1>
+    <p class="text-center text-body-secondary mb-4">Filtrează și sortează pentru a găsi piesa perfectă pentru mașina ta.</p>
+
+    <div class="produse-layout">
+        <aside class="sidebar-filtre">
+            <h3>Filtre</h3>
+            <div class="row g-3">
+                <div class="col-12">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" role="switch" id="inp-favorite">
+                        <label class="form-check-label" for="inp-favorite">Afișează doar favorite</label>
+                    </div>
+                </div>
+                <hr>
+                <div class="col-12">
+                    <label for="inp-nume" class="form-label">Nume produs:</label>
+                    <input type="text" id="inp-nume" class="form-control">
+                </div>
+                <div class="col-12 form-floating">
+                    <textarea class="form-control" placeholder="Căutare în descriere" id="inp-descriere" style="height: 100px"></textarea>
+                    <label for="inp-descriere">Caută în descriere</label>
+                </div>
+                <div class="col-12">
+                    <label for="inp-pret" class="form-label">Preț: <span id="info-pret" class="badge bg-secondary"><%= pretMax %></span> €</label>
+                    <input type="range" id="inp-pret" class="form-range" min="<%= pretMin %>" max="<%= pretMax %>" value="<%= pretMax %>">
+                </div>
+                <div class="col-12">
+                    <label for="inp-producator" class="form-label">Producător:</label>
+                    <select id="inp-producator" class="form-select">
+                        <option value="toate" selected>Toate</option>
+                        <% producatori.forEach(function(prod){ %>
+                            <option value="<%= prod %>"><%= prod %></option>
+                        <% }); %>
+                    </select>
+                </div>
+                <div class="col-12">
+                    <label class="form-label d-block">În stoc:</label>
+                    <div class="btn-group w-100" role="group">
+                        <input type="radio" class="btn-check" name="inp-stoc" id="stoc-toate" value="toate" autocomplete="off" checked>
+                        <label class="btn btn-outline-secondary" for="stoc-toate">Oricare</label>
+                        <input type="radio" class="btn-check" name="inp-stoc" id="stoc-da" value="da" autocomplete="off">
+                        <label class="btn btn-outline-secondary" for="stoc-da">Da</label>
+                        <input type="radio" class="btn-check" name="inp-stoc" id="stoc-nu" value="nu" autocomplete="off">
+                        <label class="btn btn-outline-secondary" for="stoc-nu">Nu</label>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="my-4">
+            
+            <div class="d-grid gap-2">
+                <button id="resetare" class="btn btn-secondary"><i class="bi bi-arrow-counterclockwise me-2"></i><span class="d-none d-sm-inline">Resetează</span></button>
+                <div class="btn-group">
+                    <button id="sort-asc" class="btn btn-outline-light w-50" title="Sortează crescător după preț"><i class="bi bi-sort-up"></i></button>
+                    <button id="sort-desc" class="btn btn-outline-light w-50" title="Sortează descrescător după preț"><i class="bi bi-sort-down"></i></button>
+                </div>
+                <button id="calcul" class="btn btn-info"><i class="bi bi-calculator me-2"></i><span class="d-none d-sm-inline">Calcul Preț Mediu</span></button>
+                <div id="info-calcul" class="mt-2 text-center"></div>
+            </div>
+        </aside>
+
+        <section class="produse-coloana-principala">
+            <div id="produse-container" class="produse-grid"></div>
+            <nav id="paginatie-container" aria-label="Navigare pagini produse" class="mt-4">
+                <ul class="pagination justify-content-center"></ul>
+            </nav>
+        </section>
+    </div>
+</main>
+
+<template id="template-produs">
+    <article class="produs-articol card h-100">
+        <div class="produs-imagine">
+            <img src="" alt="imagine produs" class="card-img-top">
+        </div>
+        <div class="produs-detalii card-body d-flex flex-column">
+            <h5 class="produs-nume card-title">Nume Produs</h5>
+            <p class="produs-descriere card-text text-body-secondary flex-grow-1">Descriere produs...</p>
+            <div class="produs-meta mt-auto d-flex justify-content-between align-items-center">
+                <span class="produs-pret badge text-bg-danger fs-6"></span>
+                <span class="produs-categorie badge text-bg-secondary"></span>
+                <span class="produs-stoc fw-bold"></span>
+            </div>
+        </div>
+        <div class="produs-actiuni card-footer text-center">
+            <button class="btn btn-sm btn-outline-info btn-compara" title="Adaugă la comparație"><i class="bi bi-bar-chart-steps"></i></button>
+            <button class="btn btn-sm btn-outline-warning btn-favorit" title="Adaugă la favorite"><i class="bi bi-pin-angle"></i></button>
+            <button class="btn btn-sm btn-outline-secondary btn-ascunde" title="Ascunde temporar"><i class="bi bi-eye-slash"></i></button>
+            <button class="btn btn-sm btn-outline-danger btn-sterge" title="Șterge din listă (sesiune)"><i class="bi bi-trash"></i></button>
+        </div>
+    </article>
+</template>
+
+<div class="modal fade" id="produsModal" tabindex="-1" aria-labelledby="produsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="produsModalLabel">Detalii Produs</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img id="modal-imagine" src="" class="img-fluid rounded" alt="Imagine produs">
+                    </div>
+                    <div class="col-md-6">
+                        <h3 id="modal-nume"></h3>
+                        <p id="modal-descriere"></p>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><b>Preț:</b> <span id="modal-pret" class="badge text-bg-danger"></span></li>
+                            <li class="list-group-item"><b>Categorie:</b> <span id="modal-categorie" class="text-capitalize"></span></li>
+                            <li class="list-group-item"><b>Producător:</b> <span id="modal-producator"></span></li>
+                            <li class="list-group-item"><b>Disponibilitate:</b> <span id="modal-stoc"></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    window.produseInitiale = <%- JSON.stringify(produse) %>;
+    window.categorieSelectata = "<%= categorie_selectata %>";
+    window.ofertaCurenta = <%- JSON.stringify(locals.ofertaCurenta || null) %>;
+</script>
+<script src="/resurse/js/produse.js"></script>
+
+<%- include('fragmente/footer') %>

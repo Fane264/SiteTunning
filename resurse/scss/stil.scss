@@ -303,3 +303,277 @@ img, iframe { max-width: 100%; height: auto; }
 .galerie-animata:hover .slide {
     animation-play-state: paused;
 }
+/* Stiluri pentru pagina de produse */
+.produse-layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+}
+
+.sidebar-filtre {
+    flex: 1;
+    min-width: 250px;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 1.5em;
+    border-radius: 8px;
+    align-self: flex-start;
+}
+
+.sidebar-filtre h3 {
+    border-bottom: 2px solid var(--col-primar);
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
+}
+
+.produse-grid {
+    flex: 3;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5em;
+}
+
+.produs-articol {
+    background-color: #fff;
+    color: #000;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+.produs-imagine img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.produs-detalii {
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.produs-nume {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+
+.produs-descriere {
+    font-size: 0.9em;
+    flex-grow: 1;
+    margin-bottom: 1em;
+}
+
+.produs-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* Stiluri pentru noile functionalitati */
+
+// Stil pentru cardurile de produs favorite
+.produs-articol.favorit {
+    border: 2px solid var(--bs-warning);
+    box-shadow: 0 0 15px rgba($warning, 0.5);
+
+    .btn-favorit {
+        background-color: var(--bs-warning);
+        color: #000;
+    }
+}
+
+// Spatiere pentru butoanele de actiune de pe card
+.produs-actiuni {
+    .btn {
+        margin: 0 0.25rem;
+    }
+}
+
+// Asiguram ca fereastra modala are culorile corecte pentru tema
+.modal-content {
+    background-color: var(--bs-tertiary-bg);
+    color: var(--bs-body-color);
+}
+
+/* ============================================== */
+/* === STILURI PENTRU SISTEMUL DE OFERTE === */
+/* ============================================== */
+
+#banner-oferta {
+    position: sticky;
+    top: 60px; /* Sub meniul de navigare */
+    z-index: 999;
+    border-radius: 0;
+    margin-bottom: 0;
+    border: 0;
+    border-bottom: 3px solid var(--bs-light);
+    font-size: 1.1rem;
+}
+
+.countdown-timer.countdown-warning {
+    color: var(--bs-warning);
+    animation: pulse 1s infinite;
+    transform-origin: center;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+    100% { transform: scale(1); }
+}
+
+/* Stiluri pentru noile functionalitati din Etapa 6.2 */
+.produs-articol.favorit {
+    border: 2px solid var(--bs-warning);
+    box-shadow: 0 0 15px rgba(255, 193, 7, 0.5); /* Folosind variabila Bootstrap $warning */
+    .btn-favorit {
+        background-color: var(--bs-warning);
+        color: #000;
+        border-color: var(--bs-warning);
+    }
+}
+.produs-actiuni {
+    .btn { margin: 0 0.25rem; }
+}
+.modal-content {
+    background-color: var(--bs-tertiary-bg);
+    color: var(--bs-body-color);
+}
+.modal-header, .modal-body {
+    border-color: var(--bs-border-color);
+}
+.list-group-item {
+    background-color: transparent;
+    border-color: var(--bs-border-color);
+}
+
+/* ============================================== */
+/* === STILURI PENTRU COMPARARE PRODUSE === */
+/* ============================================== */
+
+.container-comparare {
+    position: fixed;
+    bottom: -150px; /* Ascuns initial complet */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--bs-dark);
+    color: var(--bs-light);
+    padding: 10px 20px;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0 -4px 10px rgba(0,0,0,0.3);
+    z-index: 1050;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: bottom 0.5s ease-in-out;
+}
+
+.container-comparare.activ {
+    bottom: 0;
+}
+
+.produse-comparate {
+    display: flex;
+    gap: 10px;
+}
+
+.produs-comparat-item {
+    background-color: rgba(255,255,255,0.1);
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+}
+
+.btn-remove-comparare {
+    background: none;
+    border: none;
+    color: var(--bs-light);
+    font-size: 1.5rem;
+    line-height: 1;
+    padding: 0 5px;
+    cursor: pointer;
+    opacity: 0.7;
+    &:hover {
+        opacity: 1;
+        color: var(--bs-danger);
+    }
+}
+
+// Stil pentru butoanele de comparare dezactivate
+.btn-compara:disabled {
+    cursor: not-allowed;
+    filter: grayscale(80%);
+    opacity: 0.5;
+}
+// ... tot codul SCSS existent, inclusiv regulile pentru tema Sepia si efecte ...
+
+/* ============================================== */
+/* === STILURI NOI PENTRU PAGINA DE SETURI  === */
+/* ============================================== */
+
+.set-card-redesigned {
+    transition: box-shadow 0.3s ease;
+    &:hover {
+        box-shadow: 0 0.5rem 1rem rgba(0,0,0,.15) !important;
+    }
+}
+
+.set-image-collage {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 0; // Fara spatiu intre imagini
+    max-height: 400px;
+}
+
+.set-image-collage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+}
+
+[data-bs-theme="dark"] .set-card-redesigned {
+    background-color: var(--bs-gray-900);
+}
+
+.set-card-redesigned .produse-in-set {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.set-card-redesigned .produs-link-in-set {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: var(--bs-body-color);
+    width: 100px;
+    transition: transform 0.2s ease;
+
+    &:hover {
+        transform: scale(1.05);
+        color: var(--bs-primary);
+    }
+
+    img {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 5px;
+        margin-bottom: 0.5rem;
+    }
+
+    span {
+        font-size: 0.8rem;
+        text-align: center;
+    }
+}

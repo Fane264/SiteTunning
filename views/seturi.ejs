@@ -1,0 +1,42 @@
+<%- include('fragmente/header') %>
+
+<main class="container mt-5 pt-4">
+    <div class="text-center">
+        <h1 class="mb-2">Seturi de Produse</h1>
+        <p class="text-body-secondary mb-4">Pachete create special pentru a oferi performanță și valoare, cu un preț redus.</p>
+    </div>
+
+    <div class="seturi-container">
+        <% seturi.forEach(function(set) { %>
+            <div class="card set-card-redesigned mb-4 overflow-hidden">
+                <div class="row g-0">
+                    <div class="col-lg-5 col-md-4 set-image-collage">
+                        <% set.produse.slice(0, 4).forEach(function(produs) { %>
+                            <img src="/resurse/imagini/produse/<%= produs.imagine %>" alt="<%= produs.nume %>" title="<%= produs.nume %>" class="img-fluid">
+                        <% }); %>
+                    </div>
+                    <div class="col-lg-7 col-md-8">
+                        <div class="card-body d-flex flex-column h-100">
+                            <h3 class="card-title"><%= set.nume_set %></h3>
+                            <p class="card-text text-body-secondary flex-grow-1"><%= set.descriere_set %></p>
+                            
+                            <h5>Produse incluse:</h5>
+                            <ul class="list-unstyled">
+                                <% set.produse.forEach(function(produs) { %>
+                                    <li><i class="bi bi-check-circle-fill text-success me-2"></i><a href="/produs/<%= produs.id %>" class="text-decoration-none"><%= produs.nume %></a></li>
+                                <% }); %>
+                            </ul>
+
+                            <div class="text-end mt-auto">
+                                <span class="pret-original me-2 text-body-secondary">Preț total: <del><%= set.pret_total.toFixed(2) %> €</del></span>
+                                <span class="pret-redus fs-5 fw-bold text-danger">Preț set: <%= set.pret_final.toFixed(2) %> €</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</main>
+
+<%- include('fragmente/footer') %>

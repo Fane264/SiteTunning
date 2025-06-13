@@ -1,5 +1,12 @@
 <%- include('fragmente/header') %>
 
+<% if (locals.ofertaCurenta && new Date(ofertaCurenta.data_finalizare) > new Date()) { %>
+    <div id="banner-oferta" class="alert alert-danger text-center fw-bold" role="alert" data-finalizare="<%= ofertaCurenta.data_finalizare %>">
+        OFERTĂ SPECIALĂ! Reducere de <b><%= ofertaCurenta.reducere %>%</b> la toate produsele din categoria <b><%= ofertaCurenta.categorie.replace(/_/g, ' ') %></b>!
+        Oferta expiră în: <span id="timp-ramas" class="countdown-timer"></span>
+    </div>
+<% } %>
+
 <main class="grid-container">
     <section id="sectiune1" class="zona1">
       <h2>Motoare și Performanță</h2>
@@ -19,28 +26,16 @@
     <section id="sectiune2" class="zona2">
       <h2>Suspensii și Frânare</h2>
       <p>O mașină puternică are nevoie de un control pe măsură. Sistemele de suspensie și frânare sunt esențiale pentru siguranță și pentru a putea folosi eficient puterea motorului, în special pe viraje și la viteze mari.</p>
-      <h3>Arcuri Sport și Amortizoare</h3>
-      <p>Un set de arcuri sport coboară garda la sol, reducând ruliul în viraje și oferind un aspect mai agresiv. Combinate cu amortizoare reglabile (coilovers), acestea permit ajustarea precisă a înălțimii și rigidității, pentru un echilibru perfect între confort și performanță.</p>
-      <h3>Discuri și Etrieri Performanți</h3>
-      <p>Frânele standard își pot atinge limitele rapid în condiții de stres. Trecerea la discuri de frână ventilate sau perforate și etrieri cu mai multe pistoane (de la producători precum Brembo sau AP Racing) asigură o putere de oprire constantă și fiabilă, eliminând efectul de "fading".</p>
     </section>
 
     <section id="sectiune3" class="zona3">
       <h2>Exterior și Aerodinamică</h2>
       <p>Aspectul exterior al unei mașini tunate este cartea sa de vizită. Modificările exterioare nu doar că oferă un design unic, ci pot îmbunătăți semnificativ și aerodinamica, crescând stabilitatea la viteze mari.</p>
-      <h3>Bodykit Complet</h3>
-      <p>Un bodykit (bare față/spate, praguri) redesenează liniile mașinii, oferindu-i o prezență impunătoare. Materiale precum fibra de sticlă, poliuretanul sau fibra de carbon sunt folosite pentru a crea piese durabile și ușoare.</p>
-      <h3>Elemente Aerodinamice</h3>
-      <p>Un eleron bine proiectat nu este doar de decor; el generează forță de apăsare (downforce) pe puntea spate, îmbunătățind tracțiunea. Splitterele frontale și difuzoarele spate optimizează fluxul de aer pe sub mașină, reducând portanța și crescând stabilitatea.</p>
     </section>
 
     <section id="sectiune4" class="zona4">
       <h2>Roți și Jante</h2>
       <p>Jantele și anvelopele sunt singurele puncte de contact ale mașinii cu șoseaua, având un impact uriaș asupra manevrabilității, performanței și aspectului general.</p>
-      <h3>Jante</h3>
-      <p>Jantele din aliaj ușor sau forjate reduc masa nesuspendată, permițând suspensiei să lucreze mai eficient. Acest lucru se traduce printr-o manevrabilitate îmbunătățită și un răspuns mai rapid al direcției. Designul jantei este, de asemenea, un element cheie al personalizării.</p>
-      <h3>Anvelope</h3>
-      <p>Alegerea anvelopelor potrivite este crucială. Anvelopele de înaltă performanță (Ultra High Performance) oferă aderență excepțională pe uscat și umed, permițând frânări mai scurte și viteze mai mari în viraje. Pentru utilizare pe circuit, anvelopele de tip semi-slick sunt alegerea ideală.</p>
     </section>
     
     <section id="sectiune_duotone" class="duotone-container">
@@ -49,15 +44,11 @@
     <section id="sectiune5" class="zona5">
       <h2>Iluminare</h2>
       <p>Un sistem de iluminare modern nu doar că îmbunătățește vizibilitatea pe timp de noapte, dar definește și caracterul mașinii. Tehnologiile LED și Laser au deschis noi orizonturi în designul farurilor și stopurilor.</p>
-      <h3>Faruri și Stopuri Custom</h3>
-      <p>Înlocuirea blocurilor optice cu unele cu design custom, cu lumini de zi (DRL) LED și semnalizări dinamice, poate moderniza instantaneu aspectul oricărei mașini. Farurile cu tehnologie LED Matrix sau Laser oferă o vizibilitate superioară fără a-i orbi pe ceilalți participanți la trafic.</p>
     </section>
 
     <section id="sectiune6" class="zona6">
       <h2>Interior și Confort</h2>
       <p>Interiorul este spațiul unde îți petreci timpul, așa că merită la fel de multă atenție ca și exteriorul. De la scaune sport la sisteme multimedia de ultimă generație, confortul și funcționalitatea pot fi îmbunătățite considerabil.</p>
-      <h3>Volane și Scaune Sport</h3>
-      <p>Un volan sport, îmbrăcat în Alcantara sau fibră de carbon, oferă o priză mai bună și un aspect premium. Scaunele sport (tip scoică) de la producători precum Recaro sau Sparco oferă un suport lateral excelent, fiind esențiale pentru un condus dinamic.</p>
     </section>
 
     <section id="sectiune7" class="zona7">
@@ -75,9 +66,9 @@
         <p>Calitatea serviciilor noastre este garantată de colaborările cu nume de referință în industria auto-moto:</p>
         <ul>
             <li><b class="text-danger">Brembo</b> - Lider mondial în sisteme de frânare de înaltă performanță.</li>
-            <li><b>Bilstein</b> - Specialist în tehnologii de suspensie, de la stradă la motorsport.</li>
-            <li><b>Recaro</b> - Producător de scaune premium cu focus pe ergonomie și siguranță.</li>
-            <li><b>Akrapovič</b> - Creator de sisteme de evacuare de top, recunoscute pentru sunet și performanță.</li>
+            <li><b>Bilstein</b> - Specialist în tehnologii de suspensie.</li>
+            <li><b>Recaro</b> - Producător de scaune premium.</li>
+            <li><b>Akrapovič</b> - Creator de sisteme de evacuare de top.</li>
         </ul>
     </div>
 

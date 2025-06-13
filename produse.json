@@ -1,0 +1,79 @@
+[
+    {
+        "id": 1,
+        "nume": "Kit Evacuare Sport Akrapovič",
+        "descriere": "Sistem de evacuare complet din titan, oferă un sunet agresiv și o reducere semnificativă a greutății.",
+        "imagine": "evacuare.jpg",
+        "categorie": "piese_performanta",
+        "pret": 2500,
+        "data_adaugare": "2025-01-15",
+        "in_stoc": true,
+        "producator": "Akrapovič"
+    },
+    {
+        "id": 2,
+        "nume": "Jante Forjate BBS CI-R",
+        "descriere": "Set de 4 jante forjate, ultra-ușoare, cu design clasic și finisaj Platinum Silver. Dimensiune: 19 inch.",
+        "imagine": "jante.jpg",
+        "categorie": "roti_jante",
+        "pret": 3200,
+        "data_adaugare": "2025-02-20",
+        "in_stoc": true,
+        "producator": "BBS"
+    },
+    {
+        "id": 3,
+        "nume": "Kit Suspensie Coilover Bilstein B16",
+        "descriere": "Suspensie reglabilă pe înălțime și duritate, oferă un control excepțional și un confort sporit.",
+        "imagine": "suspensie.jpg",
+        "categorie": "suspensii_franare",
+        "pret": 1800,
+        "data_adaugare": "2025-03-10",
+        "in_stoc": false,
+        "producator": "Bilstein"
+    },
+    {
+        "id": 4,
+        "nume": "Scaune Sport Recaro Pole Position",
+        "descriere": "Scaune tip scoică din fibră de sticlă, îmbrăcate în velur negru. Suport lateral excelent pentru condus sportiv.",
+        "imagine": "scaune.jpg",
+        "categorie": "interior_confort",
+        "pret": 1500,
+        "data_adaugare": "2025-04-05",
+        "in_stoc": true,
+        "producator": "Recaro"
+    },
+    {
+        "id": 5,
+        "nume": "Kit Frânare Brembo GT",
+        "descriere": "Kit complet de frânare cu etrieri cu 6 pistoane și discuri perforate de 380mm. Putere de oprire incredibilă.",
+        "imagine": "frane.jpg",
+        "categorie": "suspensii_franare",
+        "pret": 4500,
+        "data_adaugare": "2025-05-22",
+        "in_stoc": true,
+        "producator": "Brembo"
+    },
+    {
+        "id": 6,
+        "nume": "Eleron Carbon Stil GT",
+        "descriere": "Eleron din fibră de carbon reală, cu design agresiv de circuit. Generează forță de apăsare semnificativă.",
+        "imagine": "eleron.jpg",
+        "categorie": "exterior_aerodinamica",
+        "pret": 950,
+        "data_adaugare": "2025-06-01",
+        "in_stoc": true,
+        "producator": "Seibon"
+    },
+    {
+        "id": 7,
+        "nume": "Volan Alcantara/Carbon",
+        "descriere": "Volan custom cu partea inferioară plată, finisaj din Alcantara și inserții de fibră de carbon.",
+        "imagine": "volan.jpg",
+        "categorie": "interior_confort",
+        "pret": 700,
+        "data_adaugare": "2025-06-03",
+        "in_stoc": false,
+        "producator": "Custom"
+    }
+]

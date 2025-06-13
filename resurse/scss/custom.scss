@@ -1,9 +1,6 @@
-// (0.2) Customizare Bootstrap
-
 // 1. Suprascriem variabilele Bootstrap
-// Important: Acestea trebuie definite INAINTE de a importa Bootstrap
-$primary: #D32F2F;      // Culoarea ta primara (rosu)
-$secondary: #6c757d;    // O culoare secundara standard
+$primary: #D32F2F;
+$secondary: #6c757d;
 $success: #198754;
 $info: #0dcaf0;
 $warning: #ffc107;
@@ -11,30 +8,109 @@ $danger: #dc3545;
 $light: #f8f9fa;
 $dark: #212529;
 
-$body-bg: #212121;      // Culoarea ta de fundal
-$body-color: #FAFAFA;    // Culoarea ta de text
+$body-bg: #212121;
+$body-color: #FAFAFA;
 
 $font-family-sans-serif: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 $headings-font-weight: 700;
-$border-radius: 0.1rem;      // Margini mai ascutite
-$btn-padding-y: 0.5rem;
-$btn-padding-x: 1rem;
+$border-radius: 0.2rem;
+$btn-border-width: 1px;
+
+$form-range-track-height: 0.25rem;
+$form-range-track-bg: #555;
+$form-range-thumb-width: 1.5rem;
+$form-range-thumb-bg: $info;
+$form-range-thumb-border-radius: 1rem;
+$form-range-thumb-focus-box-shadow: 0 0 0 0.25rem rgba($info, 0.5);
 
 // 2. Importam Bootstrap
-// Calea este relativa la acest fisier, urcand 2 nivele pana la `resurse`, apoi in `node_modules`
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
-// 3. Adaugam stiluri custom suplimentare (optional)
-// Acestea se vor aplica PESTE stilurile Bootstrap
+// 3. Adaugam stiluri custom suplimentare
 .btn-custom-contact {
-    @extend .btn; // Mosteneste stilurile de baza ale unui buton
-    @extend .btn-outline-info; // Mosteneste stilul outline-info
-
-    // Suprascriem ce dorim
+    @extend .btn;
+    @extend .btn-outline-info;
     border-width: 2px;
     font-weight: bold;
+    &:hover { color: $dark; }
+}
+
+[data-bs-theme="sepia"] {
+    // Variabile de baza pentru tema
+    --bs-body-bg: #f1e9d2;
+    --bs-body-color: #4a4032;
+    --bs-emphasis-color: #2b251c;
+    --bs-heading-color: #6a421a;
     
-    &:hover {
-        color: $dark;
+    // Fundaluri pentru componente
+    --bs-secondary-bg: #e6ddc5;
+    --bs-tertiary-bg: #faf5e9;
+    
+    // Borduri
+    --bs-border-color: #d3c5a8;
+    --bs-border-color-translucent: rgba(74, 64, 50, 0.175);
+
+    // Link-uri
+    --bs-link-color-rgb: 140, 90, 50;
+    --bs-link-hover-color-rgb: 106, 66, 26;
+
+    // Suprascrieri specifice pentru componente
+    .main-nav {
+        background-color: #e6ddc5 !important;
+        border-bottom: 1px solid var(--bs-border-color);
+
+        .nav-links a, .nav-home, .hamburger .bar, .theme-switcher .btn {
+            color: var(--bs-body-color) !important;
+            border-color: var(--bs-body-color) !important;
+        }
+        .nav-links > li > a:hover {
+            background-color: rgba(74, 64, 50, 0.1);
+        }
+    }
+
+    .dropdown-menu {
+         --bs-dropdown-bg: var(--bs-tertiary-bg);
+         --bs-dropdown-link-color: var(--bs-body-color);
+         --bs-dropdown-link-hover-bg: #d3c5a8;
+         --bs-dropdown-border-color: var(--bs-border-color);
+    }
+    
+    .card, .sidebar-filtre, .zona1, .zona2, .zona3, .zona4, .zona5, .zona6, .zona7, #sectiune_duotone, #lista-parteneri {
+      background-color: var(--bs-tertiary-bg);
+      border-color: var(--bs-border-color);
+    }
+
+    .sidebar-filtre {
+        label {
+            color: var(--bs-body-color);
+        }
+    }
+
+    .btn-check:checked+.btn {
+        color: #fff;
+    }
+    
+    footer {
+        color: var(--bs-body-color);
+        a {
+            color: rgb(var(--bs-link-color-rgb));
+            &:hover { color: rgb(var(--bs-link-hover-color-rgb)); }
+        }
+    }
+
+    // CORECTIE: Regula generala pentru textul secundar pe tema Sepia
+    .text-body-secondary {
+        color: #6c5f4f !important; 
+    }
+
+    // CORECTIE: Regula specifica pentru butoanele de sortare pe tema Sepia
+    .btn-outline-light {
+        --bs-btn-color: #4a4032;
+        --bs-btn-border-color: #8c5a32;
+        --bs-btn-hover-bg: #8c5a32;
+        --bs-btn-hover-color: #fff;
+        --bs-btn-active-bg: #6a421a;
+        --bs-btn-active-border-color: #6a421a;
+        --bs-btn-active-color: #fff;
     }
 }

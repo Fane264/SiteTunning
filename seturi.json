@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "nume_set": "Kit Performanță Stage 1",
+        "descriere_set": "Pachetul ideal pentru a începe modificările de performanță. Include evacuare sport și o suspensie îmbunătățită pentru control superior."
+    },
+    {
+        "id": 2,
+        "nume_set": "Pachet Estetică și Manevrabilitate",
+        "descriere_set": "Un set care combină aspectul agresiv cu performanța pe viraje. Jantele ușoare și eleronul de carbon fac diferența."
+    },
+    {
+        "id": 3,
+        "nume_set": "Pachet Confort și Stil Interior",
+        "descriere_set": "Transformă interiorul mașinii tale într-un cockpit premium, cu scaune sport confortabile și un volan pe măsură."
+    },
+    {
+        "id": 4,
+        "nume_set": "Kit Complet Circuit",
+        "descriere_set": "Tot ce ai nevoie pentru o zi pe circuit: frâne puternice, suspensie de competiție și evacuare pentru putere maximă."
+    },
+    {
+        "id": 5,
+        "nume_set": "Pachet All-Rounder",
+        "descriere_set": "Un pachet echilibrat care îmbunătățește toate aspectele mașinii: putere, manevrabilitate și aspect."
+    }
+]

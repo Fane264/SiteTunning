@@ -1,0 +1,184 @@
+{
+  "oferte": [
+    {
+      "categorie": "suspensii_franare",
+      "data_incepere": 1749821719461,
+      "data_finalizare": 1749821821461,
+      "reducere": 15
+    },
+    {
+      "categorie": "roti_jante",
+      "data_incepere": 1749821617458,
+      "data_finalizare": 1749821686458,
+      "reducere": 50
+    },
+    {
+      "categorie": "piese_performanta",
+      "data_incepere": 1749821548455,
+      "data_finalizare": 1749821655455,
+      "reducere": 25
+    },
+    {
+      "categorie": "exterior_aerodinamica",
+      "data_incepere": 1749821441453,
+      "data_finalizare": 1749821535453,
+      "reducere": 25
+    },
+    {
+      "categorie": "piese_performanta",
+      "data_incepere": 1749821347439,
+      "data_finalizare": 1749821449439,
+      "reducere": 30
+    },
+    {
+      "categorie": "roti_jante",
+      "data_incepere": 1749821245435,
+      "data_finalizare": 1749821348435,
+      "reducere": 30
+    },
+    {
+      "categorie": "exterior_aerodinamica",
+      "data_incepere": 1749821142431,
+      "data_finalizare": 1749821256431,
+      "reducere": 40
+    },
+    {
+      "categorie": "suspensii_franare",
+      "data_incepere": 1749821028430,
+      "data_finalizare": 1749821112430,
+      "reducere": 20
+    },
+    {
+      "categorie": "roti_jante",
+      "data_incepere": 1749820944428,
+      "data_finalizare": 1749821028428,
+      "reducere": 50
+    },
+    {
+      "categorie": "piese_performanta",
+      "data_incepere": 1749820860415,
+      "data_finalizare": 1749820942415,
+      "reducere": 20
+    },
+    {
+      "categorie": "interior_confort",
+      "data_incepere": 1749820778403,
+      "data_finalizare": 1749820884403,
+      "reducere": 50
+    },
+    {
+      "categorie": "piese_performanta",
+      "data_incepere": 1749473466067,
+      "data_finalizare": 1749473575067,
+      "reducere": 45
+    },
+    {
+      "categorie": "suspensii_franare",
+      "data_incepere": 1749466851006,
+      "data_finalizare": 1749466922006,
+      "reducere": 20
+    },
+    {
+      "categorie": "piese_performanta",
+      "data_incepere": 1749466636142,
+      "data_finalizare": 1749466718142,
+      "reducere": 20
+    },
+    {
+      "categorie": "interior_confort",
+      "data_incepere": 1749466554137,
+      "data_finalizare": 1749466659137,
+      "reducere": 40
+    },
+    {
+      "categorie": "exterior_aerodinamica",
+      "data_incepere": 1749466449127,
+      "data_finalizare": 1749466540127,
+      "reducere": 50
+    },
+    {
+      "categorie": "roti_jante",
+      "data_incepere": 1749466358114,
+      "data_finalizare": 1749466458114,
+      "reducere": 20
+    },
+    {
+      "categorie": "suspensii_franare",
+      "data_incepere": 1749466258098,
+      "data_finalizare": 1749466339098,
+      "reducere": 40
+    },
+    {
+      "categorie": "exterior_aerodinamica",
+      "data_incepere": 1749466177096,
+      "data_finalizare": 1749466269096,
+      "reducere": 5
+    },
+    {
+      "categorie": "interior_confort",
+      "data_incepere": 1749466085080,
+      "data_finalizare": 1749466151080,
+      "reducere": 35
+    },
+    {
+      "categorie": "suspensii_franare",
+      "data_incepere": 1749466019064,
+      "data_finalizare": 1749466118064,
+      "reducere": 40
+    },
+    {
+      "categorie": "piese_performanta",
+      "data_incepere": 1749465920059,
+      "data_finalizare": 1749466011059,
+      "reducere": 40
+    },
+    {
+      "categorie": "suspensii_franare",
+      "data_incepere": 1749465829043,
+      "data_finalizare": 1749465948043,
+      "reducere": 20
+    },
+    {
+      "categorie": "exterior_aerodinamica",
+      "data_incepere": 1749465710040,
+      "data_finalizare": 1749465771040,
+      "reducere": 50
+    },
+    {
+      "categorie": "piese_performanta",
+      "data_incepere": 1749465649025,
+      "data_finalizare": 1749465745025,
+      "reducere": 40
+    },
+    {
+      "categorie": "interior_confort",
+      "data_incepere": 1749465553019,
+      "data_finalizare": 1749465666019,
+      "reducere": 15
+    },
+    {
+      "categorie": "suspensii_franare",
+      "data_incepere": 1749465440010,
+      "data_finalizare": 1749465505010,
+      "reducere": 40
+    },
+    {
+      "categorie": "piese_performanta",
+      "data_incepere": 1749465375003,
+      "data_finalizare": 1749465441003,
+      "reducere": 45
+    },
+    {
+      "categorie": "roti_jante",
+      "data_incepere": 1749465308989,
+      "data_finalizare": 1749465411989,
+      "reducere": 30
+    },
+    {
+      "categorie": "piese_performanta",
+      "data_incepere": 1749465205987,
+      "data_finalizare": 1749465292987,
+      "reducere": 5
+    }
+  ]
+}
